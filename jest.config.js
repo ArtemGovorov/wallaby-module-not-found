@@ -15,7 +15,7 @@ module.exports = {
   // Setup Enzyme
   snapshotSerializers: ["enzyme-to-json/serializer"],
   // Tried these with no luck...
-  setupTestFrameworkScriptFile: "./setupEnzyme.ts"
-  //setupTestFrameworkScriptFile: "setupEnzyme.ts"
-  //setupTestFrameworkScriptFile: "<rootDir>/setupEnzyme.ts"
+  //setupTestFrameworkScriptFile: "./src/setupEnzyme.ts" // Works in Jest
+  //setupTestFrameworkScriptFile: "src/setupEnzyme.ts" // Does not work in Jest
+  setupTestFrameworkScriptFile: "<rootDir>/src/setupEnzyme.ts" // Works in Jest
 };

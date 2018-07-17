@@ -8,8 +8,9 @@ module.exports = wallaby => ({
   files: [
     "tsconfig.json",
     // These are all trying to add setupEnzyme.ts...
-    "./setupEnzyme.ts",
-    "setupEnzyme.ts",
+    "./src/setupEnzyme.ts",
+    "src/setupEnzyme.ts",
+    "**/setupEnzyme.ts",
 
     // This fixes the error but no tests run
     //"**/*.{js,jsx,ts,tsx}",
