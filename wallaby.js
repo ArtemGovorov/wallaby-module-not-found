@@ -3,7 +3,7 @@
 
 module.exports = wallaby => ({
   // module.exports = () => ({
-  name: "Wallaby: Branching 360 Visual Editor",
+  name: "Wallaby",
 
   files: [
     "tsconfig.json",
