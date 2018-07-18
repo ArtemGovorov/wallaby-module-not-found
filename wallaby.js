@@ -1,24 +1,11 @@
-// const typescriptJson = require('./tsconfig.json');
-// const babelCore = require('@babel/core');
-
 module.exports = wallaby => ({
-  // module.exports = () => ({
   name: "Wallaby",
 
   files: [
     "tsconfig.json",
-    // These are all trying to add setupEnzyme.ts...
-    "./src/setupEnzyme.ts",
-    "src/setupEnzyme.ts",
-    "**/setupEnzyme.ts",
-
-    // This fixes the error but no tests run
-    //"**/*.{js,jsx,ts,tsx}",
-
-    "src/**/*.{js,jsx,ts,tsx}",
-    "src/**/*.{css,sass,scss}",
-    "!src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-    "!package.json"
+    {pattern: ".babelrc", instrument: false},
+    "src/**/*.{js,jsx,ts,tsx,css,sass,scss}",
+    "!src/**/__tests__/**/*.{js,jsx,ts,tsx}"
   ],
   tests: ["src/__tests__/**/*.{js,jsx,ts,tsx}"],
 
@@ -26,13 +13,7 @@ module.exports = wallaby => ({
   // filesWithNoCoverageCalculated: ['src/setupEnzyme.ts'],
 
   compilers: {
-    "**/*.{js,jsx,ts,tsx}": wallaby.compilers.babel({
-      //    // babel: babelCore,
-      //    // presets: ['react-app'],
-    })
-    // '**/*.{ts|tsx}': wallaby.compilers.typeScript({
-    //  typescript: typescriptJson,
-    // }),
+    "**/*.{js,jsx}": wallaby.compilers.babel()
   },
 
   env: {
